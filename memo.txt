@@ -1,5 +1,6 @@
 ---Dockerの使用-----------------------
 ※必ずDockerDesktopを起動しておく
+※cd リンクで実行場所を変えておく
 
 docker-compose up -d //Dockerの起動
 docker-compose ps //起動確認
