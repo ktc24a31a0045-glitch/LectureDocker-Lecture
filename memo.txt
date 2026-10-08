@@ -1,0 +1,10 @@
+---Dockerの使用-----------------------
+※必ずDockerDesktopを起動しておく
+
+docker-compose up -d //Dockerの起動
+docker-compose ps //起動確認
+docker-compose exec "コンテナ名" bash //コンテナへ接続
+exit //コンテナから抜ける
+
+set key
+quit //telnetを抜けるときに使用

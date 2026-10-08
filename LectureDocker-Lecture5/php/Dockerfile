@@ -11,6 +11,8 @@ RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list && \
 
 # 一度だけアップデートを行い、必要なパッケージをまとめてインストールする
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    autoconf \
+    build-essential \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
@@ -27,6 +29,12 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli mbstring gd iconv
 # Memcached 拡張のインストール
 RUN pecl install memcached \
     && docker-php-ext-enable memcached
+
+# Redis インストール
+RUN pecl install redis-4.2.0 \
+    && docker-php-ext-enable redis
+
+COPY . /var/www/html/
 
 # Apacheの設定
 COPY ./php_apache2.conf /etc/apache2/mods-enabled
