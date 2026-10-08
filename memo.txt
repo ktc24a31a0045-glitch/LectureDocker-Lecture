@@ -8,3 +8,5 @@ exit //コンテナから抜ける
 
 set key
 quit //telnetを抜けるときに使用
+
+web
